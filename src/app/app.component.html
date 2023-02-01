@@ -1,11 +1,19 @@
-<h1>List des pokemons:</h1>
-<input
-    #input
-    (keyup)="selectPokemon(input.value)"
-    type="number"
-    >
-<p>{{ pokemonSelected?.name }}</p>
-<p 
-    *ngFor="let pokemon of this.pokemonList">
-    {{pokemon.name}}
-</p>
+<h1 class="center">List des pokemons:</h1>
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let pokemon of this.pokemonList"class="col m4 s6">
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img [src]="pokemon.picture">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{ pokemon.name }}</p>
+                        <p><small>{{ pokemon.created }}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
